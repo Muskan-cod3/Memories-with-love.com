@@ -78,17 +78,13 @@ button:hover, .button:hover {
     margin-bottom: 10px; /* Consistent spacing for list items */
 }
 
-/* Positioning the audio player */
+
 audio {
-    position: absolute;
-    padding: 10px;
-    top: 10px;
-    left: 20px;
-    width: auto; /* Set width to auto so it fits the content */
-    padding-left: 15px; /* Add padding for extra space from the left */
+    position: sticky;
+    top: 20px; /* Distance from the top when it starts to stick */
+    right: 0; /* Use right if you want to align it to the right */
+    z-index: 10;
 }
-
-
 
 /* Sparkle overlay effect */
 .sparkle-overlay {
@@ -164,6 +160,21 @@ img, video {
     border: 2px solid #880E4F;
     border-radius: 10px;
     z-index: 2;
+}
+/* Centering and styling video and div */
+.video-container {
+    background-color: #880E4F;
+    border-radius: 10px; /* Matches the video border-radius */
+    border: 10px;
+    border-color: black;
+    display: inline-block; /* Ensures the div size wraps tightly around the video */
+    padding: 2px; /* Adjust if needed to align the purple border */
+}
+
+video {
+    display: block;
+    border: 2px solid #880E4F; /* Purple border */
+    border-radius: 10px; /* Rounded corners for the video */
 }
 
 
