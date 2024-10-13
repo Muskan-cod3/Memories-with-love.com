@@ -1,0 +1,229 @@
+/* General body styles */
+body {
+    font-family: 'Georgia', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FFEBEE;
+    color: #880E4F;
+    overflow-x: hidden;
+}
+
+/* Adding consistent shadow to headings */
+.shadow {
+    text-shadow: 2px 2px 10px #c21818;
+}
+
+/* Centering content on the page */
+.page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 35px;
+    position: relative;
+    /* height: 100vh; Full height of the viewport */
+    text-align: center; /* Center all text */
+}
+
+/* Improved layout for lists */
+.list {
+    padding: 10px;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    width: auto; /* Set width to auto so it fits the content */
+    padding-left: 15px; /* Add padding for extra space from the left */
+}
+
+/* Styling for the .para div */
+.para {
+    width: 50%;              /* Set width to 50% of the screen */
+    margin: 0 auto;          /* Center the div horizontally */
+    text-align: center;      /* Center the text inside */
+    padding: 20px;           /* Optional: Add padding inside the div for better spacing */
+    box-sizing: border-box;  /* Ensures padding is included within the width */
+    z-index: 2;              /* Ensure it stays above the sparkle overlay */
+}
+
+
+/* Buttons styling improvements */
+button, .button {
+    border: 2px solid #880E4F;
+    border-radius: 12px;
+    color: #880E4F;
+    font-size: 20px;
+    padding: 10px 20px;
+    margin-bottom: 10px; /* Added spacing between buttons */
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover effect on buttons */
+button:hover, .button:hover {
+    background-color: #D81B60;
+}
+
+/* Styling for list items */
+#first{
+    list-style-position: inside;
+    padding: 10px;
+    list-style: "😍";
+    margin-bottom: 10px; /* Consistent spacing for list items */
+}
+#sec {
+    list-style-position: inside;
+    padding: 10px;
+    list-style: "🥰";
+    margin-bottom: 10px; /* Consistent spacing for list items */
+}
+
+/* Positioning the audio player */
+audio {
+    position: absolute;
+    padding: 10px;
+    top: 10px;
+    left: 20px;
+    width: auto; /* Set width to auto so it fits the content */
+    padding-left: 15px; /* Add padding for extra space from the left */
+}
+
+
+
+/* Sparkle overlay effect */
+.sparkle-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: radial-gradient(circle, rgba(255,255,255,0.4) 20%, transparent 20%) 0 0,
+                radial-gradient(circle, rgba(255,255,255,0.4) 20%, transparent 20%) 5px 5px,
+                radial-gradient(circle, rgba(255,255,255,0.2) 15%, transparent 20%) 10px 10px,
+                radial-gradient(circle, rgba(255,255,255,0.2) 15%, transparent 20%) 15px 15px;
+    background-size: 20px 20px;
+    animation: sparkle 2s infinite linear;
+    z-index: 1;
+    opacity: 0.7;
+}
+
+@keyframes sparkle {
+    0% { background-position: 0 0, 5px 5px, 10px 10px, 15px 15px; }
+    100% { background-position: 20px 20px, 25px 25px, 30px 30px, 35px 35px; }
+}
+
+/* Text alignment fix */
+h1, h2, h3, p {
+    z-index: 2;
+    text-align: center; /* Center align all headings */
+    margin-bottom: 15px; /* Reduced spacing to remove unnecessary gaps */
+}
+
+.image-rows {
+    display: flex;
+    justify-content: space-around; /* Space images evenly */
+    align-items: flex-start; /* Align items to the top */
+    gap: 50px; /* Add space between image containers */
+    flex-wrap: nowrap; /* Ensure wrapping on small screens */
+}
+
+.image-container {
+    display: flex;
+    flex-direction: column; /* Stack image and caption vertically */
+    align-items: center; /* Center-align content */
+    text-align: center; /* Center the caption under the image */
+    max-width: 250px; /* Optional: Set a max width for the images */
+}
+
+.image-container img {
+    width: 100%; /* Make the image take full container width */
+    height: auto; /* Maintain the aspect ratio */
+}
+
+
+.image-row {
+    display: flex; /* Enables flexbox layout */
+    justify-content: center; /* Center the images horizontally */
+    flex-wrap: nowrap; /* Allow wrapping if the screen is too small */
+    gap: 10px; /* Add space between images */
+}
+
+.image-row img {
+    max-width: 17%; /* Adjust the width of the images in the row */
+    height: auto; /* Maintain the aspect ratio */
+}
+.image-row, div{
+    z-index: 2;
+}
+
+/* Image and video alignment */
+img, video {
+    display: block;
+    margin: 20px auto; /* Center images/videos */
+    border: 2px solid #880E4F;
+    border-radius: 10px;
+    z-index: 2;
+}
+
+
+img.large {
+    max-width: 50%; /* Adjust this depending on the desired size */
+    height: auto;
+    margin: 20px auto;
+}
+img.small {
+    max-width: 235px; /* Adjust this depending on the desired size */
+    height: auto;
+    margin: 20px auto;
+}
+img.small1 {
+    max-width: 200px; /* Adjust this depending on the desired size */
+    height: auto;
+    margin: 20px auto;
+}
+img.small2 {
+    max-width: 270px; /* Adjust this depending on the desired size */
+    height: auto;
+    margin: 20px auto;
+}
+
+/* Adjust image sizes on different screens */
+@media (min-width: 1024px) {
+    img, video {
+        max-width: 50%; /* Larger image size for desktop */
+    }
+    #first, #sec {
+        font-size: 1.5em;
+    }
+}
+
+/* For tablet screens */
+@media (min-width: 768px) and (max-width: 1024px) {
+    img, video {
+        max-width: 60%; /* Medium image size for tablet */
+    }
+}
+
+/* For mobile screens */
+@media (max-width: 768px) {
+    img, video {
+        max-width: 90%; /* Full width for mobile */
+    }
+
+    #first, #sec {
+        font-size: 2em;
+    }
+}
+
+/* Heading styling */
+h1, h2, h3 {
+    margin-top: 30px;
+    color: #C2185B;
+    line-height: 1.4; /* Improved line height for better readability */
+}
+
+/* Extra margin to remove unwanted empty spaces */
+.page {
+    margin-bottom: 50px; /* Extra bottom space for content breathing room */
+}
